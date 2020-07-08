@@ -44,35 +44,33 @@ This replaceChildren API enables web developers to easily replace node's childre
 
 <body>
 <template id="appleOptions">
-   <option value="X">Iphone X</option>
-   <option value="Max">IPhone Max</option> 
+  <option value="X">Iphone X</option>
+  <option value="Max">IPhone Max</option> 
 </template>
 
 <template id="googleOptions">
-   <option value="p3">Pixel 3</option>
-   <option value="p4">Pixel 4</option> 
+  <option value="p3">Pixel 3</option>
+  <option value="p4">Pixel 4</option> 
 </template>
 
 <select id="sOS"> 
-   <option value="">Select your phone OS</option>
-   <option value="apple">Apple</option>
-   <option value="google">Google</option> 
+  <option value="">Select your phone OS</option>
+  <option value="apple">Apple</option>
+  <option value="google">Google</option> 
 </select>
 <br />
 <select id="sPhone" required ></select>
 
 <script>
-    sOS.onchange = (event) => {
-      let val = event.target.value;
-    	if (val) {
-    		sPhone.replaceChildren(
-          document.getElementById(val+'Options').content.cloneNode(true)
-        );
-    	}
-    	else {
-    		sPhone.replaceChildren();
-    	}
+  sOS.onchange = (event) => {
+    let val = event.target.value;
+    if (val) {
+      sPhone.replaceChildren(document.getElementById(val+'Options').content.cloneNode(true));
     }
+    else {
+      sPhone.replaceChildren();
+    }
+  }
 </script>
 </body>
 ```
